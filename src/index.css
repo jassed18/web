@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tech AI Design System - Premium colors and effects */
+
+@layer base {
+  :root {
+    /* Background System */
+    --background: 240 8% 5%;
+    --background-secondary: 240 8% 8%;
+    --foreground: 210 40% 98%;
+
+    /* Card System */
+    --card: 240 8% 8%;
+    --card-hover: 240 8% 12%;
+    --card-foreground: 210 40% 98%;
+    --card-border: 240 10% 18%;
+
+    /* Brand Colors - Tech Blue to AI Purple */
+    --primary: 217 91% 60%;
+    --primary-glow: 217 91% 70%;
+    --primary-foreground: 240 8% 5%;
+    
+    --secondary: 270 95% 75%;
+    --secondary-glow: 270 95% 85%;
+    --secondary-foreground: 240 8% 5%;
+
+    /* AI Purple Accent */
+    --accent: 270 80% 65%;
+    --accent-glow: 270 80% 75%;
+    --accent-foreground: 240 8% 5%;
+
+    /* Muted System */
+    --muted: 240 8% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    /* Interactive States */
+    --border: 240 10% 18%;
+    --input: 240 8% 12%;
+    --ring: 217 91% 60%;
+    
+    /* Success & Error */
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(270 80% 65%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60% / 0.8), hsl(270 80% 65% / 0.8));
+    --gradient-card: linear-gradient(135deg, hsl(240 8% 8%), hsl(240 8% 12%));
+    
+    /* Glows and Effects */
+    --glow-primary: 0 0 40px hsl(217 91% 60% / 0.3);
+    --glow-secondary: 0 0 40px hsl(270 80% 65% / 0.3);
+    --shadow-premium: 0 25px 50px -12px hsl(240 8% 0% / 0.8);
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Light mode - brighter version */
+  .light {
+    --background: 210 40% 98%;
+    --background-secondary: 210 40% 95%;
+    --foreground: 240 8% 5%;
+    
+    --card: 210 40% 98%;
+    --card-hover: 210 40% 95%;
+    --card-foreground: 240 8% 5%;
+    --card-border: 210 20% 85%;
+    
+    --muted: 210 20% 90%;
+    --muted-foreground: 215 16% 46%;
+    
+    --border: 210 20% 85%;
+    --input: 210 20% 90%;
+    
+    --gradient-card: linear-gradient(135deg, hsl(210 40% 98%), hsl(210 40% 95%));
+    --shadow-premium: 0 25px 50px -12px hsl(240 8% 0% / 0.1);
+  }
+}
+
+/* Base Styles & Custom Components */
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Custom Button Variants */
+  .btn-hero {
+    @apply relative px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300;
+    background: var(--gradient-primary);
+    box-shadow: var(--glow-primary);
+    transform: translateY(0);
+  }
+  
+  .btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow-primary), var(--shadow-premium);
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 rounded-lg border border-border bg-transparent hover:bg-card-hover;
+    transition: var(--transition-smooth);
+  }
+
+  /* Card Components */
+  .card-premium {
+    @apply relative p-6 rounded-xl border border-card-border;
+    background: var(--gradient-card);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+  }
+  
+  .card-premium:hover {
+    @apply border-primary/20;
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-premium);
+  }
+
+  /* Glow Effects */
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary-glow) / 0.5);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0% { box-shadow: var(--glow-primary); }
+  100% { box-shadow: var(--glow-secondary); }
+}
