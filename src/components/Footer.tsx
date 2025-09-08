@@ -22,7 +22,7 @@ export function Footer() {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Bot className="h-8 w-8 text-primary" />
-              <h3 className="text-xl font-bold text-gradient">AI Solutions</h3>
+              <h3 className="text-xl font-bold text-gradient">AI Automatiza.ya</h3>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
               Transformamos empresas con automatización inteligente, desarrollo de aplicaciones 
@@ -73,19 +73,19 @@ export function Footer() {
             <div className="space-y-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 text-primary" />
-                <a href="mailto:hello@aisolutions.com" className="hover:text-primary transition-colors">
-                  hello@aisolutions.com
+                <a href="mailto:aisolutionsauto20@gmail.com" className="hover:text-primary transition-colors">
+                  aisolutionsauto20@gmail.com
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:+15551234567" className="hover:text-primary transition-colors">
-                  +1 (555) 123-4567
+                <a href="tel:+573012169668" className="hover:text-primary transition-colors">
+                  +57 (301) 2169668
                 </a>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-primary" />
-                <span>San Francisco, CA</span>
+                <span>Bogotá, CO</span>
               </div>
             </div>
 
@@ -94,7 +94,7 @@ export function Footer() {
               <h5 className="text-sm font-semibold mb-2">Newsletter Tech</h5>
               <div className="flex gap-2">
                 <Input 
-                  placeholder="tu@email.com" 
+                  placeholder="aisolutionsauto20@gmail.com" 
                   className="text-sm"
                 />
                 <Button size="sm" className="shrink-0">
@@ -118,7 +118,7 @@ export function Footer() {
             </div>
           </div>
           <p className="text-xs">
-            Construido con 💙 usando React, TypeScript y Tailwind CSS
+            Construido con React, TypeScript y Tailwind CSS
           </p>
         </div>
       </div>

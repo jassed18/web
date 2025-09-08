@@ -280,7 +280,7 @@ export function Projects() {
                       <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                     </Button>
                   </DialogTrigger>
-                  <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                  <DialogContent className="w-[95vw] max-w-4xl max-h-[90vh] overflow-y-auto sm:w-full">
                     <DialogHeader>
                       <div className="flex items-center gap-4 mb-4">
                         <div className={`p-3 rounded-lg ${project.image}`}>
@@ -295,22 +295,22 @@ export function Projects() {
                       </div>
                     </DialogHeader>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                      <div className="flex items-center gap-3 p-4 rounded-lg bg-card-hover">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-6">
+                        <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-lg bg-card-hover">
                         <Users className="h-5 w-5 text-primary" />
                         <div>
                           <p className="text-sm text-muted-foreground">Cliente</p>
                           <p className="font-semibold">{project.details.client}</p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-3 p-4 rounded-lg bg-card-hover">
+                        <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-lg bg-card-hover">
                         <Clock className="h-5 w-5 text-primary" />
                         <div>
                           <p className="text-sm text-muted-foreground">Duración</p>
                           <p className="font-semibold">{project.details.duration}</p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-3 p-4 rounded-lg bg-card-hover">
+                      <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 rounded-lg bg-card-hover">
                         <Award className="h-5 w-5 text-primary" />
                         <div>
                           <p className="text-sm text-muted-foreground">Equipo</p>
@@ -319,7 +319,7 @@ export function Projects() {
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                       {/* Desafíos */}
                       <div>
                         <h4 className="text-lg font-semibold mb-3 text-primary">Desafíos Principales</h4>
@@ -364,9 +364,9 @@ export function Projects() {
                     </div>
 
                     {/* Resultados */}
-                    <div className="mt-6">
-                      <h4 className="text-lg font-semibold mb-3 text-primary">Resultados Obtenidos</h4>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="mt-4 sm:mt-6">
+                      <h4 className="text-base sm:text-lg font-semibold mb-3 text-primary">Resultados Obtenidos</h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-3">
                         {project.details.results.map((result, idx) => (
                           <div key={idx} className="flex items-center gap-3 p-3 rounded-lg bg-success/10 border border-success/20">
                             <div className="w-2 h-2 bg-success rounded-full shrink-0" />

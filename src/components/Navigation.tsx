@@ -38,7 +38,7 @@ export function Navigation() {
           {/* Logo */}
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <Bot className="h-8 w-8 text-primary animate-pulse-glow" />
-            <span className="text-xl font-bold text-gradient">AI Solutions</span>
+            <span className="text-xl font-bold text-gradient">AI Automatiza.ya</span>
           </div>
 
           {/* Desktop Navigation */}
