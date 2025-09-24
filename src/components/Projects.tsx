@@ -202,6 +202,14 @@ const projects = [
 
 export function Projects() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
+  const handleRequestSimilarProject = () => {
+    setIsDialogOpen(false);
+    setTimeout(() => {
+      document.getElementById('quote-section')?.scrollIntoView({ behavior: 'smooth' });
+    }, 300);
+  };
   return (
     <section id="projects-section" className="py-20 px-6 bg-background-secondary">
       <div className="max-w-7xl mx-auto">
@@ -268,13 +276,16 @@ export function Projects() {
                 </div>
 
                 {/* Action Button */}
-                <Dialog>
+                <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
                   <DialogTrigger asChild>
                     <Button 
                       variant="outline" 
                       size="sm" 
                       className="w-full btn-ghost group/btn"
-                      onClick={() => setSelectedProject(project)}
+                      onClick={() => {
+                        setSelectedProject(project);
+                        setIsDialogOpen(true);
+                      }}
                     >
                       Ver Detalles
                       <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
@@ -379,7 +390,7 @@ export function Projects() {
                     <div className="mt-6 pt-6 border-t border-border">
                       <Button 
                         className="w-full btn-hero"
-                        onClick={() => document.getElementById('quote-section')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={handleRequestSimilarProject}
                       >
                         Solicitar Proyecto Similar
                       </Button>
